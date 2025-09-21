@@ -272,6 +272,7 @@ export default interface Config<
     ChatMessage: {
         batchSize: number;
         collection: typeof collections.Messages;
+        dataModels: Record<string, ConstructorOf<TypeDataModel<documents.ChatMessage, DataSchema>>>;
         documentClass: {
             new (data: PreCreate<TChatMessage["_source"]>, context?: DocumentConstructionContext<null>): TChatMessage;
         };
